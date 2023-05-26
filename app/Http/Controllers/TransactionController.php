@@ -23,24 +23,20 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        if(auth()->user()->hasRole('petugas')){
-            return view('admin.transaction.index');
-        } else {
-            return abort('403');
-        }
+        return view('admin.transaction.index');
     } 
 
     public function api(Request $request)
     {
         if($request->status){
             if($request->status == 'belum'){
-                $transactions = Transaction::where('status', 0)->get();
+                $transactions = Transaction::where('status', 0);
             } else {
-                $transactions = Transaction::where('status', 1)->get();
+                $transactions = Transaction::where('status', 1);
             }
         } elseif($request->date_start) {
             $date_start = date('Y-m-d', strtotime($request->date_start));
-            $transactions = Transaction::where('date_start', $date_start)->get();
+            $transactions = Transaction::where('date_start', $date_start);
         } else {
             $transactions = Transaction::all(); 
         }

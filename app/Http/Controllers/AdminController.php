@@ -21,17 +21,6 @@ class AdminController extends Controller
         $publishers = Publisher::count();
         $transactions = Transaction::count();
 
-        // grafik penerbit
-        $data_donut = DB::table('books')
-                    ->select('books.publisher_id', DB::raw('count(books.id) as count'))
-                    ->groupBy('books.publisher_id')
-                    ->pluck('count');
-
-        $label_donut = DB::table('publishers')
-                    ->join('books', 'books.id', '=', 'publishers.id')
-                    ->pluck('name');
-        // grafik penerbit
-
         // grafik peminjaman
         $label_bar = ['Peminjaman', 'Pengembalian'];
         $data_bar = [];
@@ -63,7 +52,7 @@ class AdminController extends Controller
                     ->pluck('name');
         // grafik katalog
 
-        return view('admin.dashboard', compact('books', 'members', 'publishers', 'transactions', 'data_donut', 'label_donut', 'data_bar', 'data_pie', 'label_pie',));
+        return view('admin.dashboard', compact('books', 'members', 'publishers', 'transactions', 'data_bar', 'data_pie', 'label_pie',));
     }
 
     public function test_spatie()

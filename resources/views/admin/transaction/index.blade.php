@@ -10,7 +10,6 @@
 @endsection
 
 @section('content')
-@role('petugas')
 <div id="controller">
   <div class="card"> 
     <div class="card-header">
@@ -53,7 +52,6 @@
     </div>
   </div>
 </div>
-@endrole
 @endsection
 
 @section('js')

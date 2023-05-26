@@ -13,3 +13,8 @@ The project was created using Laravel 8 and VueJs 2.
 -   `php artisan migrate:fresh --seed`
 -   `php artisan serve`
 -   visit `http://127.0.0.1:8000`
+
+### Login:
+
+-   email = admin@gmail.com
+-   password = 12345678

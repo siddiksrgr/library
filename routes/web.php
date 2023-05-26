@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes(['register' => false]);
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\AdminController::class, 'index']);
+Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('home');
 Route::resource('/transactions', App\Http\Controllers\TransactionController::class);
 Route::resource('/authors', App\Http\Controllers\AuthorController::class);
 Route::resource('/catalogs', App\Http\Controllers\CatalogController::class);
