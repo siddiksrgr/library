@@ -4,7 +4,7 @@ The project was created using Laravel 8 and VueJs 2.
 
 ## Installation
 
--   `git clone https://github.com/siddiksrgr/library.git project-name `
+-   `git clone https://github.com/siddiksrgr/my-books.git project-name `
 -   `cd project-name`
 -   `composer install`
 -   `cp .env.example .env`
